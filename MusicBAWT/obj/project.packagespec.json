@@ -25,6 +25,24 @@
   },
   "frameworks": {
     "netcoreapp3.1": {
+      "dependencies": {
+        "Discord.Net": {
+          "target": "Package",
+          "version": "[2.1.1, )"
+        },
+        "Microsoft.Extensions.Configuration": {
+          "target": "Package",
+          "version": "[3.1.2, )"
+        },
+        "Microsoft.Extensions.Configuration.Json": {
+          "target": "Package",
+          "version": "[3.1.2, )"
+        },
+        "Microsoft.Extensions.DependencyInjection": {
+          "target": "Package",
+          "version": "[3.1.2, )"
+        }
+      },
       "imports": [
         "net461",
         "net462",
