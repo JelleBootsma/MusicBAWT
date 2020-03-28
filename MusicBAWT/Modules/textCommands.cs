@@ -1,14 +1,8 @@
-﻿using Discord;
-using Discord.Net;
-using Discord.WebSocket;
+﻿using Discord.WebSocket;
 using Discord.Commands;
-using System;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Microsoft.Extensions.Configuration;
+using MusicBAWT.Objects;
 
 namespace MusicBAWT.Modules
 {
@@ -28,19 +22,6 @@ namespace MusicBAWT.Modules
 
             // send simple string reply
             await ReplyAsync(sb.ToString());
-        }
-        
-        [Command("Join")]
-        public async Task JoinChannelCommand()
-        {
-            SocketGuildUser user = (SocketGuildUser)Context.User;
-            if (user.VoiceChannel == null)
-            {
-                await ReplyAsync("Sorry " + user.Username + ", but I can't join your voice channel.");
-                return;
-            }
-            _service.
-            await user.SendMessageAsync("test PM");
         }
     }
 }

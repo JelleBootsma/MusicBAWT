@@ -1,13 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.Json;
 using Microsoft.Extensions.DependencyInjection;
 using Discord;
-using Discord.Net;
+
 using Discord.Commands;
 using Discord.WebSocket;
+using MusicBAWT.Objects;
 using MusicBAWT.Services;
 
 namespace MusicBAWT
@@ -16,6 +18,7 @@ namespace MusicBAWT
     {
         private DiscordSocketClient _client;
         private readonly IConfiguration _config;
+        public static List<Channel> ConnectedChannels = new List<Channel>();
         public Program()
         {
             // create the configuration
