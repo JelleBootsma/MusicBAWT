@@ -1,4 +1,5 @@
 .idea/
 MusicBAWT/bin/
 MusicBAWT/obj/Debug/
+MusicBAWT/obj/publish/
 MusicBAWT/config.json
