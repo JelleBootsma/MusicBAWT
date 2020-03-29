@@ -8,6 +8,9 @@ using MusicBAWT.Objects;
 
 namespace MusicBAWT.Services
 {
+    /// <summary>
+    /// HTTP request client for weather requests to the OpenWeatherMap API
+    /// </summary>
     public class WeatherHandler
     {
         static HttpClient client = new HttpClient();
@@ -26,7 +29,11 @@ namespace MusicBAWT.Services
         }
         
         
-
+        /// <summary>
+        /// Return weather object of requested location
+        /// </summary>
+        /// <param name="location">Requested location</param>
+        /// <returns>Weather object</returns>
         public async Task<Weather> getWeather(string location)
         {
             Weather weather = null;

@@ -11,6 +11,10 @@ namespace MusicBAWT.Modules
 {
     public class textCommands : ModuleBase
     {
+        /// <summary>
+        /// Say hello the the user
+        /// </summary>
+        /// <returns></returns>
         [Command("Hello")]
         public async Task HelloCommand()
         {
@@ -27,6 +31,11 @@ namespace MusicBAWT.Modules
             await ReplyAsync(sb.ToString());
         }
         
+        /// <summary>
+        /// Send reply with current weather info of the requested location
+        /// </summary>
+        /// <param name="location">Requested location</param>
+        /// <returns></returns>
         [Command("Weather")]
         public async Task WeatherCommand(string location)
         {
@@ -37,8 +46,8 @@ namespace MusicBAWT.Modules
             Weather weather = await weatherHandler.getWeather(location);
 
             sb.AppendLine("In " + weather.Location + " the weather is " + weather.Description.ToLower());
-            sb.AppendLine("Temperature: " + Math.Round(weather.Temperature, 0).ToString() + "°C");
-            sb.AppendLine("Humidity: " + Math.Round(weather.Humidity, 0).ToString() + "%");
+            sb.AppendLine("Temperature: " + Math.Round(weather.Temperature, 0) + "°C");
+            sb.AppendLine("Humidity: " + Math.Round(weather.Humidity, 0) + "%");
             // send simple string reply
             await ReplyAsync(sb.ToString());
         }
